@@ -1,34 +1,27 @@
 pipeline {
   agent any
-  
+    
+  tools {nodejs "node"}
+    
   stages {
-    stage('Checkout') {
+        
+    stage('Git') {
       steps {
-        git branch: 'main', url: 'https://github.com/mon-utilisateur/mon-referentiel.git'
+        git 'https://github.com/****/****'
       }
     }
-    
-    stage('Install') {
-      steps {
-        sh 'npm install'
-      }
-    }
-    
-    // stage('Build') {
-    //   steps {
-    //     sh 'npm run build'
-    //   }
-    // }
-    
-    // stage('Test') {
-    //   steps {
-    //     sh 'npm run test'
-    //   }
-    // }
-    
+     
     stage('Build') {
       steps {
-        sh 'npm run start'
+        sh 'npm install'
+        //  sh '<<Build Command>>'
+      }
+    }  
+    
+            
+    stage('Test') {
+      steps {
+        sh 'node test'
       }
     }
   }
