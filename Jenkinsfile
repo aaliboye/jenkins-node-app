@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        sh git clone 'https://github.com/mon-utilisateur/mon-referentiel.git'
+        git clone 'https://github.com/mon-utilisateur/mon-referentiel.git'
       }
     }
     
