@@ -4,11 +4,11 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git clone 'https://github.com/mon-utilisateur/mon-referentiel.git'
+        git branch: 'main', url: 'https://github.com/aaliboye/jenkins-node-app.git'
       }
     }
     
-    stage('Build') {
+    stage('build') {
       steps {
         sh 'npm install'
       }
@@ -26,7 +26,7 @@ pipeline {
     //   }
     // }
     
-    stage('Deploy') {
+    stage('deploy') {
       steps {
         sh 'npm run start'
       }
