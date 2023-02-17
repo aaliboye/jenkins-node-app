@@ -1,28 +1,34 @@
 pipeline {
   agent any
-    
-  tools {nodejs "node"}
-    
+  
   stages {
-        
-    stage('Git') {
+    stage('Checkout') {
       steps {
-        git 'https://github.com/aaliboye/jenkins-node-app.git'
+        git branch: 'main', url: 'https://github.com/mon-utilisateur/mon-referentiel.git'
       }
     }
-     
+    
     stage('Build') {
       steps {
         sh 'npm install'
-        //  sh '<<Build Command>>'
       }
-    }  
+    }
     
-            
-    stage('Test') {
+    // stage('Build') {
+    //   steps {
+    //     sh 'npm run build'
+    //   }
+    // }
+    
+    // stage('Test') {
+    //   steps {
+    //     sh 'npm run test'
+    //   }
+    // }
+    
+    stage('Deploy') {
       steps {
-        sh 'node test'
+        sh 'npm run start'
       }
     }
   }
-}
