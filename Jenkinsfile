@@ -17,7 +17,7 @@ pipeline {
     
     stage('Test') {
       steps {
-        bat 'on a pas fait les test unitaire'
+        echo 'on a pas fait les test unitaire'
       }
     }
     
