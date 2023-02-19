@@ -10,20 +10,20 @@ pipeline {
     
     stage('installation dependances') {
       steps {
-        sh 'npm install'
+        bat 'npm install'
       }
     }
     
     
     stage('Test') {
       steps {
-        sh 'on a pas fait les test unitaire'
+        bat 'on a pas fait les test unitaire'
       }
     }
     
     stage('deploy') {
       steps {
-        sh 'npm run start'
+        bat 'npm run start'
       }
     }
   }
