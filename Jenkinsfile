@@ -10,7 +10,7 @@ pipeline {
     
     stage('installation dependances') {
       steps {
-        sh 'npm install'
+        echo 'npm install'
       }
     }
     
@@ -23,7 +23,7 @@ pipeline {
     
     stage('deploy') {
       steps {
-        sh 'npm run start'
+        echo 'npm run start'
       }
     }
   }
