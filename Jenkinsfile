@@ -10,7 +10,7 @@ pipeline {
     
     stage('build') {
       steps {
-        echo 'npm inst'
+        sh 'npm install'
       }
     }
     
@@ -28,7 +28,7 @@ pipeline {
     
     stage('deploy') {
       steps {
-        echo 'npm run start'
+        sh 'npm run start'
       }
     }
   }
