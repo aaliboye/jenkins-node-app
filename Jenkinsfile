@@ -17,7 +17,7 @@ pipeline {
     
     stage('Test') {
       steps {
-        echo 'on a pas fait les test unitaire'
+        bat 'npm run test'
       }
     }
     
